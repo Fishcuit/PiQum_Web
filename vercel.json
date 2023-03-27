@@ -2,22 +2,26 @@
     "version": 2,
     "builds": [
       {
-        "src": "manage.py",
-        "use": "@vercel/python"
+        "src": "PiQum_Web/wsgi.py",
+        "use": "@vercel/python",
+        "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
+      },
+      {
+        "src": "build_files.sh",
+        "use": "@vercel/static-build",
+        "config": {
+          "distDir": "staticfiles_build"
+        }
       }
     ],
     "routes": [
       {
         "src": "/static/(.*)",
-        "dest": "/staticfiles/$1"
+        "dest": "/static/app/$1"
       },
       {
         "src": "/(.*)",
-        "dest": "manage.py",
-        "methods": ["GET", "POST"]
+        "dest": "PiQum_Web/wsgi.py"
       }
-    ],
-    "env": {
-      "DJANGO_SETTINGS_MODULE": "PiQum_Web.settings"
-    }
+    ]
   }
