@@ -42,7 +42,7 @@ CSRF_COOKIE_SECURE = True
 # Set the X-Frame-Options header to 'DENY'
 X_FRAME_OPTIONS = 'DENY'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.vercel.app', '.now.sh']
 
 # Application references
 # https://docs.djangoproject.com/en/2.1/ref/settings/#std:setting-INSTALLED_APPS
