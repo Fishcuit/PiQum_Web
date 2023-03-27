@@ -23,26 +23,26 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'ba62751d-8fd5-484d-a5a1-20949ee7ac7d'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-# # Security settings
-# SECURE_HSTS_SECONDS = 31536000
-# SECURE_CONTENT_TYPE_NOSNIFF = True
-# SECURE_BROWSER_XSS_FILTER = True
-# SECURE_SSL_REDIRECT = True
-# SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-# SECURE_HSTS_PRELOAD =  True
+# Security settings
+SECURE_HSTS_SECONDS = 31536000
+SECURE_CONTENT_TYPE_NOSNIFF = True
+SECURE_BROWSER_XSS_FILTER = True
+SECURE_SSL_REDIRECT = True
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_PRELOAD =  True
 
 
 
-# # Set secure flags for cookies
-# SESSION_COOKIE_SECURE = True
-# CSRF_COOKIE_SECURE = True
+# Set secure flags for cookies
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
 
-# # Set the X-Frame-Options header to 'DENY'
-# X_FRAME_OPTIONS = 'DENY'
+# Set the X-Frame-Options header to 'DENY'
+X_FRAME_OPTIONS = 'DENY'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.vercel.app', '.now.sh']
 
 # Application references
 # https://docs.djangoproject.com/en/2.1/ref/settings/#std:setting-INSTALLED_APPS
@@ -111,4 +111,5 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static', 'app')]
